@@ -24,7 +24,10 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background: var(--cream);
+  background-image: url('https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100063564494205');
+background-size: cover; 
+background-position: center; 
+background-attachment: fixed;
   color: var(--ink);
   font-family: var(--font-body);
   overflow-x: hidden;
