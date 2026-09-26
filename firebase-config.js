@@ -1,23 +1,19 @@
 // ============================================================
-// firebase-config.js
-//
-// นี่คือไฟล์เดียวที่ต้องแก้ก่อน deploy จริง!
-// ไปที่ Firebase Console > Project settings > General
-// แล้วคัดลอกค่า config ของโปรเจกต์มาแปะแทนค่าด้านล่าง
-// (ดูขั้นตอนแบบละเอียดใน README.md)
+// firebase-config.js — KUSRC Congrats
 // ============================================================
 
 export const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID",
+  apiKey:            "AIzaSyCIkRx_stvGKWzwpgfnV7YPFDAgvtg0ME8",
+  authDomain:        "kusrc-congrats.firebaseapp.com",
+  projectId:         "kusrc-congrats",
+  storageBucket:     "kusrc-congrats.firebasestorage.app",
+  messagingSenderId: "591400855542",
+  appId:             "1:591400855542:web:dc1ebb1872025c5bc949d7",
+  measurementId:     "G-QQVWFBNDWX"
 };
 
-// ถ้ายังไม่ได้ตั้งค่า Firebase จริง (apiKey ยังเป็นค่า placeholder)
-// เว็บจะสลับไปใช้ "โหมดออฟไลน์ทดสอบ" อัตโนมัติ โดยเก็บข้อความไว้ใน
-// localStorage ของเบราว์เซอร์แทน (เห็นเฉพาะเครื่องตัวเอง ไม่ real-time
-// ข้ามเครื่อง) เพื่อให้ทดสอบ UI ได้ก่อนตั้งค่า Firebase จริง
+// ชื่อ collection ที่เก็บคำอวยพรใน Firestore
+export const WISH_COLLECTION = "wishes";
+
+// เช็กว่าตั้งค่า Firebase จริงแล้วหรือยัง
 export const isFirebaseConfigured = firebaseConfig.apiKey !== "YOUR_API_KEY";
