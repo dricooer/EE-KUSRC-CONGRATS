@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ยินดีด้วยพี่บัณฑิต KUSRC 🎓</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700;800&family=Sarabun:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- พื้นหลังลอยกระทง / confetti แบบเบา ๆ -->
+  <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+
+  <!-- ===================== SCENE 1: เลือกตัวละคร ===================== -->
+  <section id="screen-select" class="screen screen--active">
+    <div class="select-wrap">
+      <p class="eyebrow-free">คณะวิศวกรรมศาสตร์ศรีราชา · มหาวิทยาลัยเกษตรศาสตร์</p>
+      <h1 class="hero-title">ยินดีด้วยพี่บัณฑิต<br><span>KUSRC</span></h1>
+      <p class="hero-sub">เลือกตัวแทนของน้อง แล้วไปบูมให้พี่กันเลย!</p>
+
+      <div class="character-grid" id="characterGrid" role="listgroup">
+        <!-- การ์ดตัวละครถูกสร้างด้วย JS -->
+      </div>
+
+      <button id="confirmCharacterBtn" class="btn btn--primary btn--large" disabled>
+        พร้อมแล้ว ไปกันเลย
+      </button>
+    </div>
+  </section>
+
+  <!-- ===================== SCENE 2: ฉากหลัก ===================== -->
+  <section id="screen-main" class="screen">
+    <div class="stage">
+      <div class="stage__sky"></div>
+
+      <div class="banner">
+        <span class="banner__flag">🎉</span>
+        <span class="banner__text">ยินดีด้วยพี่บัณฑิต KUSRC</span>
+        <span class="banner__flag">🎉</span>
+      </div>
+
+      <div class="stage__ground"></div>
+
+      <div id="walkingCharacter" class="character-actor">
+        <div class="speech-bubble" id="speechBubble"></div>
+        <div class="actor-sprite" id="actorSprite"></div>
+      </div>
+
+      <button id="boomBtn" class="btn btn--boom">
+        กดเพื่อบูมให้พี่บัณฑิต! 📣
+      </button>
+    </div>
+
+    <!-- ===================== กระดานข้อความอวยพร ===================== -->
+    <div class="board">
+      <div class="board__inner">
+        <h2 class="board__title">ฝากคำอวยพรถึงพี่บัณฑิต</h2>
+        <p class="board__status" id="connectionStatus">กำลังเชื่อมต่อ...</p>
+
+        <form id="messageForm" class="board__form">
+          <input
+            type="text"
+            id="senderName"
+            class="board__input"
+            placeholder="ชื่อผู้ส่ง (เช่น น้องปี 1 EE)"
+            maxlength="40"
+            required
+          />
+          <textarea
+            id="senderMessage"
+            class="board__textarea"
+            placeholder="เขียนคำอวยพรถึงพี่บัณฑิต..."
+            maxlength="200"
+            required
+          ></textarea>
+          <button type="submit" class="btn btn--primary">ส่งข้อความ</button>
+        </form>
+
+        <div class="board__list" id="messageList" aria-live="polite">
+          <!-- ข้อความจะถูกเพิ่มด้วย JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    ทำด้วยใจโดยชาว EE KUSRC 💚
+  </footer>
+
+  <!-- Firebase SDK (แบบ modular, โหลดผ่าน CDN — ไม่ต้องมี backend ของตัวเอง) -->
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
